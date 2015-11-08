@@ -51,6 +51,9 @@ public class HtmlHelper {
         title = title.replaceAll("&nbsp;", " ");
         filmObjectForDownload.setTitle(title);
 
+        String filmYear = rootNode.getElementsByName("h1", true)[0].getElementsByName("a", true)[0].getText().toString();
+        filmObjectForDownload.setYear(filmYear);
+
         TagNode[] ulElements = rootNode.getElementsByName("ul", true);
 
         for(int j = 0; j < ulElements.length; ++j) {
@@ -105,6 +108,7 @@ public class HtmlHelper {
                         filmObjectForDownload.setDescription(descr);
                     }
 
+                    /*
                     Matcher matcherPrem = Pattern.compile("^Премьера[\\sа-яА-Я:]+$").matcher(str);
                     if(matcherPrem.matches() && !findYear) {
                         String strDateWithElem = liElements[q].getText().toString();
@@ -117,6 +121,7 @@ public class HtmlHelper {
                         filmObjectForDownload.setYear(strDate);
                         findYear = true;
                     }
+                    */
 
                 }
 

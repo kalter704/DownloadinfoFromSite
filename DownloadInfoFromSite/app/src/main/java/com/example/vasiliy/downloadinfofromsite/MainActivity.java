@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     final String LOG_TAG = "Info";
 
     String[] siteLinks = {
+            /*
             "https://my-hit.org/film/322283/",
             "https://my-hit.org/film/398576/",
             "https://my-hit.org/film/415223/",
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
             "https://my-hit.org/film/414894/",
             "https://my-hit.org/film/414502/",
             "https://my-hit.org/serial/148/"
+            */
+            "https://my-hit.org/film/346390/"
     };
 
     List<FilmObjectForDownload> filmObjectForDownloads;
