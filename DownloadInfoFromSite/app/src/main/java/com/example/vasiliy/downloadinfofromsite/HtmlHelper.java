@@ -11,7 +11,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class HtmlHelper {
-    String PATERN = "^[а-яА-Я\\s]+$";
+    String PATERN = "^[а-яА-Яa-zA-Z\\-\\s]+$";
 
     TagNode rootNode;
 
