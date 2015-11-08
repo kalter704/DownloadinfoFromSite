@@ -60,7 +60,7 @@ public class HtmlHelper {
             String classType = ulElements[j].getAttributeByName("class");
 
             boolean find = false;
-            boolean findYear = false;
+            boolean findDesc = false;
 
             if(classType != null && classType.equals("list-unstyled")) {
                 TagNode[] liElements = ulElements[j].getElementsByName("li", true);
@@ -100,13 +100,46 @@ public class HtmlHelper {
                         }
                     }
 
-                    if("Звук:".equals(str)) {
-                        TagNode[] descriptionElements = liElements[q].getElementsByName("p", true);
-                        String descr = descriptionElements[0].getText().toString();
-                        descr = descr.replaceAll("&nbsp;", " ");
-                        descr = descr.replaceAll("&mdash;", " ");
-                        filmObjectForDownload.setDescription(descr);
+                    if("Звук:".equals(str) && !findDesc) {
+                        TagNode[] bElements = liElements[q].getElementsByName("b", true);
+                        for(int w = 0; w < bElements.length; ++w) {
+                            if("Краткое описание: ".equals(bElements[w].getText().toString())) {
+                                TagNode[] descriptionElements = liElements[q].getElementsByName("p", true);
+                                String descr = "";
+                                for(int e = 0; e < descriptionElements.length; ++e) {
+                                    String descrTemp = descriptionElements[e].getText().toString();
+                                    descrTemp = descrTemp.replaceAll("&nbsp;", " ");
+                                    descrTemp = descrTemp.replaceAll("&mdash;", " ");
+                                    descrTemp = descrTemp.replaceAll("\n", "");
+                                    descrTemp = descrTemp.replaceAll("&#8212;", "-");
+                                    descr += descrTemp;
+                                }
+                                filmObjectForDownload.setDescription(descr);
+                                findDesc = true;
+                            }
+                        }
                     }
+
+                    if("Качество:".equals(str) && !findDesc) {
+                        TagNode[] bElements = liElements[q].getElementsByName("b", true);
+                        for(int w = 0; w < bElements.length; ++w) {
+                            if("Краткое описание: ".equals(bElements[w].getText().toString())) {
+                                TagNode[] descriptionElements = liElements[q].getElementsByName("p", true);
+                                String descr = "";
+                                for(int e = 0; e < descriptionElements.length; ++e) {
+                                    String descrTemp = descriptionElements[e].getText().toString();
+                                    descrTemp = descrTemp.replaceAll("&nbsp;", " ");
+                                    descrTemp = descrTemp.replaceAll("&mdash;", " ");
+                                    descrTemp = descrTemp.replaceAll("\n", "");
+                                    descrTemp = descrTemp.replaceAll("&#8212;", "-");
+                                    descr += descrTemp;
+                                }
+                                filmObjectForDownload.setDescription(descr);
+                                findDesc = true;
+                            }
+                        }
+                    }
+
 
                     /*
                     Matcher matcherPrem = Pattern.compile("^Премьера[\\sа-яА-Я:]+$").matcher(str);

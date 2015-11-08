@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
             "https://my-hit.org/film/414502/",
             "https://my-hit.org/serial/148/"
             */
+            "https://my-hit.org/film/11053/",
+            "https://my-hit.org/film/239317/",
             "https://my-hit.org/film/346390/"
     };
 
