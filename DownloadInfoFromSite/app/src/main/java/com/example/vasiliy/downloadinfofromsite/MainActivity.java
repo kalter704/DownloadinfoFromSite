@@ -38,7 +38,19 @@ public class MainActivity extends AppCompatActivity {
             "https://my-hit.org/film/239317/",
             "https://my-hit.org/film/346390/"
             */
-            "https://my-hit.org/film/414894/"
+            //"https://my-hit.org/film/414894/"
+            "https://my-hit.org/film/1741/", //1 розыгрыш
+            "https://my-hit.org/film/108/", //2 гордость и предубеждение
+            "https://my-hit.org/film/322283/", //3 Человек-муравей
+            "https://my-hit.org/film/398576/", //4Багровый пик
+            "https://my-hit.org/film/415223/", //5Свободное падение
+            "https://my-hit.org/film/415226/", //6Перезагрузка
+            "https://my-hit.org/film/239317/", //7Игра в имитацию
+            "https://my-hit.org/film/414894/", //8Последний охотник на ведьм
+            "https://my-hit.org/film/3822/", //9Всегда говори «ДА»
+            "https://my-hit.org/film/2628/", //10
+            "https://my-hit.org/film/346390/", //qwe11
+            "https://my-hit.org/film/2155/" //12 добейся успеха
     };
 
     List<FilmObjectForDownload> filmObjectForDownloads;
